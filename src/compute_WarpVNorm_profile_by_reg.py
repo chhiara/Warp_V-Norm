@@ -16,7 +16,14 @@ import argparse
 import importlib.util
 import sys
 import os
-from Warp_V-Norm_library import get_WarpVnorm_Profile_computeReg
+
+script_path = os.path.realpath(__file__)
+script_dir = os.path.dirname(script_path)
+sys.path.append(script_dir)
+
+print(script_dir)
+
+from WarpVNorm_library import get_WarpVnorm_Profile_computeReg
 
 def main():
     parser = argparse.ArgumentParser(
@@ -52,12 +59,6 @@ def main():
 
     args = parser.parse_args()
 
-
-    # Check if all compulsory arguments are provided (argparse usually does this,
-    # but let's be explicit for clarity in this context)
-    if not all([args.bundle_fixed, args.bundle_moving, args.path_skeleton_trk, args.n_points_profile, args.out_dir]):
-        parser.print_help()
-        sys.exit(1)
 
     # Call the function with the provided arguments
     get_WarpVnorm_Profile_computeReg(args.bundle_fixed, args.bundle_moving, args.path_skeleton_trk, args.n_points_profile, args.out_dir )
