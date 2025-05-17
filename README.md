@@ -38,11 +38,11 @@ python compute_WarpVNorm.py <bundle_fixed> <bundle_moving>  <out_dir>
 
 To compute Warp V-Norm as in previous point, but additionally this command also maps   Warp V-Norm values along the bundle-skeleton points:
 ```bash
-python compute_WarpVNorm_profile_by_nii.py <path_warp_vnorm_nii> <path_skeleton_trk> <n_points_profile> <path_warp_v_norm_profile_csv> 
+python compute_WarpVNorm_profile_by_reg.py <bundle_fixed> <bundle_moving> <path_skeleton_trk> <n_points_profile> <out_dir> 
 ```
 
 To compute Warp V Norm profile by using an already saved to file Warp V Norm map. In this case the registration is not computed since Warp V Norm was already estimated. The function simply maps the Warp V-Norm values along the skeleton points:
 ```bash
-python compute_WarpVNorm_profile_by_reg.py <bundle_fixed> <bundle_moving> <path_skeleton_trk> <n_points_profile> <out_dir> 
+python compute_WarpVNorm_profile_by_nii.py <path_warp_vnorm_nii> <path_skeleton_trk> <n_points_profile> <path_warp_v_norm_profile_csv> 
 ```
 
