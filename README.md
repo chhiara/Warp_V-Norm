@@ -4,16 +4,11 @@
 
 This script calculates the Warp V-Norm and the Warp V-Norm profile, as described in the paper
 xxxx.
-The objective is to quantify structural alterations between two analogous fiber bundles by computing diffeomorphic and rigid registration begween binar masks and mapping the resulting Warp V-Norm to the template bundle's skeleton profile.
+The objective is to quantify structural alterations between two analogous fiber bundles by computing diffeomorphic and rigid registration between binar masks and mapping the resulting Warp V-Norm to the template bundle's skeleton profile.
 
-It analyzes the structural differences between two fiber bundles assumed to be anatomically analogous. The script requires two NIfTI files representing the binary masks of these bundles (values 1 where the bundle exists, 0 otherwise) and a streamline file (.trk) representing the skeleton of the **template (fixed) bundle**. 
+This metric measures the structural differences between two fiber bundles assumed to be anatomically analogous. For the computation two NIfTI files representing the binary masks of these bundles (values 1 where the bundle exists, 0 otherwise) and a streamline file (.trk) representing the skeleton of the **template (fixed) bundle** are required. 
 
 All files should be already aligned in the same space with an affine transformation based on anatomical images.
-
-**Important Notes:**
-*  The skeleton provided should be defined along the trajectory of the **fixed** bundle.
-* All files should be already aligned in the same space with a transformation based on corresponding anatomical images.
-
 
 The Warp V-Norm profile is computed through the following steps:
 
@@ -27,6 +22,11 @@ This metric was designed to estimate the differences between:
 
 * A subject's fiber bundle (considered as the **moving** bundle)
 * And a healthy template bundle (considered the **fixed** bundle)
+
+
+**Important Notes:**
+*  The skeleton provided should be defined along the trajectory of the **fixed** bundle.
+* All files should be already aligned in the same space with a transformation based on corresponding anatomical images.
 
 ## Usage
 
