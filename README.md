@@ -2,13 +2,11 @@
 
 ## Description
 
-This script calculates the Warp V-Norm and the Warp V-Norm profile, as described in the paper
-xxxx.
-The objective is to quantify structural alterations between two analogous fiber bundles by computing diffeomorphic and rigid registration between binar masks and mapping the resulting Warp V-Norm to the template bundle's skeleton profile.
+This repository collects scripts to calculate the Warp V-Norm and the Warp V-Norm profile, as described in the paper "_Supervised white matter bundle segmentation in glioma patients
+with transfer learning_".
+The objective is to quantify structural alterations between two anatomically analogous fiber bundles by computing rigid, followed by a diffeomorphic registration between binar masks and mapping the resulting Warp V-Norm to the template bundle's skeleton profile.
 
 This metric measures the structural differences between two fiber bundles assumed to be anatomically analogous. For the computation two NIfTI files representing the binary masks of these bundles (values 1 where the bundle exists, 0 otherwise) and a streamline file (.trk) representing the skeleton of the **template (fixed) bundle** are required. 
-
-All files should be already aligned in the same space with an affine transformation based on anatomical images.
 
 The Warp V-Norm profile is computed through the following steps:
 
@@ -30,13 +28,13 @@ This metric was designed to estimate the differences between:
 
 ## Usage
 
-To compute Warp V Norm by computing the registration between the two bundles, and the norm-2 of the vectorial filed of the estimated transformation in each voxel:
+To compute Warp V Norm by computing the registration between the two bundles, and the norm-2 of the vectorial field of the estimated transformation in each voxel:
 ```bash
 python compute_WarpVNorm.py <bundle_fixed> <bundle_moving>  <out_dir> 
 ```
 
 
-To compute Warp V-Norm as in previous point, but additionally this command also maps   Warp V-Norm values along the bundle-skeleton points:
+To compute Warp V-Norm as in previous point, but additionally this command also maps  Warp V-Norm values along the bundle-skeleton points:
 ```bash
 python compute_WarpVNorm_profile_by_reg.py <bundle_fixed> <bundle_moving> <path_skeleton_trk> <n_points_profile> <out_dir> 
 ```
