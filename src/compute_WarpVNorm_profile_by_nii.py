@@ -59,7 +59,7 @@ def main():
  
     # Call the function with the provided arguments
     get_WarpVnorm_Profile_from_warpVnorm(args.path_skeleton_trk, args.path_warp_vnorm_nii, args.path_warp_v_norm_profile_csv, int(args.n_points_profile))
-    print(f"Function 'get_WarpVnorm_Profile_computeReg' executed successfully. Check the output in: {args.out_dir}")
+    print(f"Function 'get_WarpVnorm_Profile_computeReg' executed successfully. Check the output in: {args.path_warp_v_norm_profile_csv}")
 
 if __name__ == "__main__":
     main()
